@@ -1,4 +1,4 @@
-package edu.dpacademy.factory.data;
+package edu.dpacademy.factory.util;
 
 public enum UnitEnum {
 

@@ -1,4 +1,4 @@
-package edu.dpacademy.factory;
+package edu.dpacademy.factory.definition;
 
 public interface AttributeDefinition {
 }
