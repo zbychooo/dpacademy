@@ -8,6 +8,7 @@ public enum UnitEnum {
 
     String name;
     String unit;
+
     UnitEnum(String name, String unit) {
         this.name = name;
         this.unit = unit;

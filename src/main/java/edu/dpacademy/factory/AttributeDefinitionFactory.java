@@ -7,7 +7,18 @@ import edu.dpacademy.factory.util.UnitEnum;
 
 public class AttributeDefinitionFactory {
 
-
+    /**
+     * Create new instance
+     *
+     * @param attrEnum
+     * @param id
+     * @param internalName
+     * @param displayName
+     * @param value
+     * @param unitEnum     it could be null if attrEnum!=AttrEnum.UNIT_NUMBER
+     * @return
+     * @throws FactoryException
+     */
     public static AttributeDefinition newAttributeDefinition(AttrEnum attrEnum, Long id, String internalName, String displayName,
                                                              Object value, UnitEnum unitEnum) throws FactoryException {
 
