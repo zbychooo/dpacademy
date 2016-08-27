@@ -5,7 +5,8 @@ import edu.dpacademy.factory.util.AttrEnum;
 import edu.dpacademy.factory.util.UnitEnum;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class AttributeDefinitionFactoryTest {
@@ -14,8 +15,8 @@ public class AttributeDefinitionFactoryTest {
     public void newAttributeDefinition_Boolean() throws Exception {
 
         Long id = 1L;
-        String displayName="Am I fridge?";
-        String internalName="com.fridgeParadox";
+        String displayName = "Am I fridge?";
+        String internalName = "com.fridgeParadox";
         Boolean value = Boolean.TRUE;
 
         AttributeDefinition attributeDefinition = AttributeDefinitionFactory.
@@ -32,8 +33,8 @@ public class AttributeDefinitionFactoryTest {
     public void newAttributeDefinition_Number() throws Exception {
 
         Long id = 1L;
-        String displayName="Vodka bottle";
-        String internalName="com.bottle.vodka";
+        String displayName = "Vodka bottle";
+        String internalName = "com.bottle.vodka";
         Double value = 0.7d;
 
         AttributeDefinition attributeDefinition = AttributeDefinitionFactory.
@@ -50,8 +51,8 @@ public class AttributeDefinitionFactoryTest {
     public void newAttributeDefinition_String() throws Exception {
 
         Long id = 1L;
-        String displayName="The name of all names";
-        String internalName="com.text.loreum";
+        String displayName = "The name of all names";
+        String internalName = "com.text.loreum";
         String value = "Loreum ipsum";
 
         AttributeDefinition attributeDefinition = AttributeDefinitionFactory.
@@ -68,8 +69,8 @@ public class AttributeDefinitionFactoryTest {
     public void newAttributeDefinition_Unit() throws Exception {
 
         Long id = 1L;
-        String displayName="The distance in meters";
-        String internalName="com.distance.unit";
+        String displayName = "The distance in meters";
+        String internalName = "com.distance.unit";
         Double value = 1.83;
         UnitEnum unitEnum = UnitEnum.LENGTH;
 

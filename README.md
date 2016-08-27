@@ -4,4 +4,4 @@ List of implemented _design patterns_:
 * factory
 * singleton
 * strategy
-
+* template method

@@ -1,20 +1,20 @@
 package edu.dpacademy;
 
-import edu.dpacademy.strategy.DelayProcess;
-import edu.dpacademy.strategy.ProcessRunner;
-import edu.dpacademy.strategy.QuickProcess;
-import edu.dpacademy.strategy.WorkflowProcess;
+import edu.dpacademy.template.DelayProcess;
+import edu.dpacademy.template.QuickProcess;
+import edu.dpacademy.template.WorkflowProcess;
 import org.apache.commons.cli.*;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class DPAcademy {
+
 
     //This is try of common cli library
     public static void main(String[] args) {
 
         Options options = new Options();
-        Option pattern = new Option("s", "strategy", false, "run strategy pattern");
+        Option pattern = new Option("t", "template", false, "run template pattern");
         pattern.setRequired(true);
 
         options.addOption(pattern);
@@ -23,9 +23,9 @@ public class DPAcademy {
         try {
             CommandLine cmd = parser.parse(options, args);
 
-            if (cmd.hasOption("s")) {
+            if (cmd.hasOption("t")) {
                 //System.out.println("s=" + cmd.getOptionValue("s"));
-                invokeStrategy();
+                invokeTemplateMethod();
             }
         } catch (ParseException e) {
             new HelpFormatter().printHelp("????", options);
@@ -33,18 +33,18 @@ public class DPAcademy {
         }
     }
 
-    private static void invokeStrategy() {
-        WorkflowProcess workflowProcess = new QuickProcess();
-        ProcessRunner processRunner = new ProcessRunner(workflowProcess);
-        Timestamp start = null;
-        Long sec = null;
-        Timestamp end = null;
-        processRunner.executeWorkflow(start, sec, end);
+    private static void invokeTemplateMethod() {
 
+        Timestamp start = Timestamp.valueOf("2011-10-02 18:48:05.123456");
+        Timestamp end = Timestamp.valueOf("2016-01-30 13:00:05.199056");
+        int intervals = 20;
 
-        Long delay = 10L;
-        workflowProcess = new DelayProcess(delay);
-        processRunner.setProcess(workflowProcess);
-        processRunner.executeWorkflow(start, sec, end);
+        WorkflowProcess quickProcess = new QuickProcess();
+        quickProcess.executeWorkflow(start, end, intervals);
+
+        intervals = 30;
+        int delay = 25;
+        WorkflowProcess delayProcess = new DelayProcess(delay);
+        delayProcess.executeWorkflow(start, end, intervals);
     }
 }

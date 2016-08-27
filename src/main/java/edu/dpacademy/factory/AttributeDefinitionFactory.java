@@ -7,7 +7,7 @@ import edu.dpacademy.factory.util.UnitEnum;
 
 public class AttributeDefinitionFactory {
 
-   // read more: http://corey.quickshiftconsulting.com/blog/first-post
+    // read more: http://corey.quickshiftconsulting.com/blog/first-post
 
     /**
      * Create new instance
