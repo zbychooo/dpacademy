@@ -25,25 +25,26 @@ public class DPAcademy {
 
             if (cmd.hasOption("s")) {
                 //System.out.println("s=" + cmd.getOptionValue("s"));
-
-                WorkflowProcess workflowProcess = new QuickProcess();
-                ProcessRunner processRunner = new ProcessRunner(workflowProcess);
-                Timestamp start = null;
-                Long sec = null;
-                Timestamp end = null;
-                processRunner.executeWorkflow(start, sec, end);
-
-
-                Long delay = 10L;
-                workflowProcess = new DelayProcess(delay);
-                processRunner.setProcess(workflowProcess);
-                processRunner.executeWorkflow(start, sec, end);
-
-
+                invokeStrategy();
             }
         } catch (ParseException e) {
             new HelpFormatter().printHelp("????", options);
             //e.printStackTrace();
         }
+    }
+
+    private static void invokeStrategy() {
+        WorkflowProcess workflowProcess = new QuickProcess();
+        ProcessRunner processRunner = new ProcessRunner(workflowProcess);
+        Timestamp start = null;
+        Long sec = null;
+        Timestamp end = null;
+        processRunner.executeWorkflow(start, sec, end);
+
+
+        Long delay = 10L;
+        workflowProcess = new DelayProcess(delay);
+        processRunner.setProcess(workflowProcess);
+        processRunner.executeWorkflow(start, sec, end);
     }
 }
