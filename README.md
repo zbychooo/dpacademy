@@ -5,3 +5,4 @@ List of implemented _design patterns_:
 * singleton
 * strategy
 * template method
+* data access object (dao)
