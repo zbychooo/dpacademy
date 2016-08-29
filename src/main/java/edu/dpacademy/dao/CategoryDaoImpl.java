@@ -20,8 +20,8 @@ public class CategoryDaoImpl implements CategoryDao {
 
     public List<Category> findByName(String name) {
         List<Category> names = new ArrayList<Category>();
-        for(Category category : repository.getCategoryList()) {
-            if(category.getName().equals(name)) {
+        for (Category category : repository.getCategoryList()) {
+            if (category.getName().equals(name)) {
                 names.add(category);
             }
         }
@@ -34,7 +34,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
     public boolean updateCategory(Long id, Category category) {
         boolean deleteFlag = this.deleteCategory(id);
-        if(deleteFlag) {
+        if (deleteFlag) {
             return repository.getCategoryList().add(category);
         }
         return false;

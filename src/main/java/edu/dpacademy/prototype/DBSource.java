@@ -1,6 +1,6 @@
 package edu.dpacademy.prototype;
 
-public class DBSource extends Sourceable{
+public class DBSource extends Sourceable {
 
     private String jdbcConnector;
     private String login;

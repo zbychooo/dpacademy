@@ -13,7 +13,7 @@ public class SearchManagerTest {
         Assert.assertTrue(searchManager.getSearchable() instanceof LinearSearch);
         Assert.assertTrue(searchManager.getSearchable() instanceof Searchable);
 
-        int[] array = new int[]{4,52,41,25,2};
+        int[] array = new int[]{4, 52, 41, 25, 2};
         int element = 25;
         int search = searchManager.getSearchable().search(array, element);
         Assert.assertEquals(3, search);
@@ -26,7 +26,7 @@ public class SearchManagerTest {
         Assert.assertTrue(searchManager.getSearchable() instanceof BinarySearch);
         Assert.assertTrue(searchManager.getSearchable() instanceof Searchable);
 
-        int[] array = new int[]{1,4,6,8,10};
+        int[] array = new int[]{1, 4, 6, 8, 10};
         int element = 10;
         int search = searchManager.getSearchable().search(array, element);
         Assert.assertEquals(4, search);

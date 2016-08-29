@@ -6,3 +6,4 @@ List of implemented _design patterns_:
 * strategy
 * template method
 * data access object (dao)
+* prototype
